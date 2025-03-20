@@ -1,14 +1,15 @@
-name: My first work flow
-on: 
+name: My first workflow
+
+on:
   push:
-    branches: 
+    branches:
       - main
-workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   MyFirstJob:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Hello World!"
+      - run: echo "Hello World!"
 
     
