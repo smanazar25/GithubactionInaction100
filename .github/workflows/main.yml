@@ -1,10 +1,25 @@
-name: My first workflow
+name: My First Workflow
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      username:
+        description: 'Enter user name'
+        required: true
+        default: 'Manazar'
+      environments:
+        description: 'Choose the environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - stage
+          - prod
+      
 
 jobs:
   MyFirstJob:
