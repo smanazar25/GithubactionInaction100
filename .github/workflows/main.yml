@@ -10,6 +10,15 @@ jobs:
   MyFirstJob:
     runs-on: ubuntu-latest
     steps:
+      
       - run: echo "Hello World!"
+      - name: checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: list the files in repositories
+        run|
+        echo following respository ${{ github.repository }}
+        pwd
+        tree
 
     
