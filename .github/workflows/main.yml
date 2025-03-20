@@ -19,26 +19,25 @@ on:
           - dev
           - stage
           - prod
-      
 
 jobs:
   MyFirstJob:
     runs-on: ubuntu-latest
     steps:
-      
-      - run: echo "Hello World!"
-      - name: checkout
+
+      - name: Print Hello World
+        run: echo "Hello World!"
+
+      - name: Checkout Repository
         uses: actions/checkout@v4.2.2
 
-     - name: Echo User Inputs
-       run: |
-         echo "Hello, ${{ inputs.username }}!"
-         echo "Selected Environment: ${{inputs.environments}}
-
-      - name: list the files in repositories
+      - name: Echo User Inputs
         run: |
-         echo following respository ${{ github.repository }}
-         pwd
-         tree
+          echo "Hello, ${{ inputs.username }}!"
+          echo "Selected Environment: ${{ inputs.environments }}"
 
-    
+      - name: List Repository Files
+        run: |
+          echo "Following repository: ${{ github.repository }}"
+          pwd
+          tree
