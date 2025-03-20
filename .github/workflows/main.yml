@@ -17,8 +17,8 @@ jobs:
 
       - name: list the files in repositories
         run: |
-        echo following respository ${{ github.repository }}
-        pwd
-        tree
+         echo following respository ${{ github.repository }}
+         pwd
+         tree
 
     
