@@ -1,20 +1,26 @@
-  name:  Example of need in github
-  on: [push]
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-        - name: install dependencies
-          run: npm install
-        - name: Build project
-          run: npm run build
-    test_job:
-      runs-on: ubuntu-latest
-      needs: build
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-        - name: Run  tests
-         run: npm test
+name: Example of need in GitHub
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+  test_job:
+    runs-on: ubuntu-latest
+    needs: build  # This ensures test_job will only run after build completes successfully
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: npm test  # This runs the tests after the code is checked out
