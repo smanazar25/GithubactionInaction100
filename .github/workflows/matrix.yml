@@ -1,21 +1,25 @@
 name: Matrix testing
+
 on:
   push:
     branches:
       - main
+
 jobs:
   matrix-test:
-    runs-on:  ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}  # The matrix will create a separate job for each OS in the list
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest,macos-latest]
-        node: [14, 16, 18]
+        os: [ubuntu-latest, windows-latest, macos-latest]  # These are the OS versions for the matrix
+        node: [14, 16, 18]  # These are the Node.js versions for the matrix
+
     steps:
-      - name: setup node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: {{ matrix.node}}
-      - name: check the node version
-        run: node -v
-    
+          node-version: ${{ matrix.node }}  # Corrected syntax for referencing matrix values
+
+      - name: Check the Node.js version
+        run: node -v  # This will check the Node.js version installed in the job
+
       
