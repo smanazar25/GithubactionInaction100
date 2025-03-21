@@ -22,4 +22,10 @@ jobs:
       - name: Check the Node.js version
         run: node -v  # This will check the Node.js version installed in the job
 
+        run: |
+          echo "repository : ${{ github.repository }}"
+          echo "Triggered by: ${{ github.actor }}"
+           echo "Triggered by SHA : ${{ github.sha }}"
+        
+
       
