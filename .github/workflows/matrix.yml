@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]  # These are the OS versions for the matrix
-        node: [14, 16, 18]  # These are the Node.js versions for the matrix
+        node: [18, 20, 21]  # These are the Node.js versions for the matrix
 
     steps:
       - name: Setup Node.js
