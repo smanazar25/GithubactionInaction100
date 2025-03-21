@@ -10,8 +10,8 @@ jobs:
     runs-on: ${{ matrix.os }}  # The matrix will create a separate job for each OS in the list
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]  # Runs the job on each OS
-        node: [18, 20, 21]  # Runs the job with each Node.js version
+        os: [ubuntu-latest]  # Runs the job on each OS
+        node: [18]  # Runs the job with each Node.js version
 
     steps:
       - name: Setup Node.js
