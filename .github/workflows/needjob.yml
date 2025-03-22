@@ -3,6 +3,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: contains(github.ref,'main/')
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
