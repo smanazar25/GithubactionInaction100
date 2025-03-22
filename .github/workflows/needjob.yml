@@ -27,3 +27,6 @@ jobs:
 
       - name: Run tests
         run: npm test  # This runs the tests after the code is checked out
+      - name: Validate the test
+        if: success()
+        run: test completd sucesfully 
