@@ -13,6 +13,8 @@ jobs:
           npm init -y
           pwd
           ls -ltr 
+          echo '  "build": "echo '\''No build step required'\''",' >> package.json
+        
         
 
       - name: Install dependencies
