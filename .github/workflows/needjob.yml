@@ -13,7 +13,19 @@ jobs:
           npm init -y
           pwd
           ls -ltr 
-          echo '  "build": "echo '\''No build step required'\''",' >> package.json
+          echo '{
+  "name": "githubactioninaction100",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+} ' > package.json
         
         
 
