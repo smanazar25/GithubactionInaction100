@@ -11,6 +11,21 @@ jobs:
           npm init -y
           pwd
           ls -ltr 
+          cat <<EOL > package.json
+           { 
+           "name": "my-project",
+           "version": "1.0.0",
+            "description": "",
+             "main": "index.js",
+              "scripts": {
+              "test": "echo \"Error: no test specified\" && exit 1",
+                 "build": "echo 'No build step required'"
+                    },
+                   "keywords": [],
+                     "author": "",
+                     "license": "ISC"
+                     }
+          EOL
           
         
       - name: Install dependencies
