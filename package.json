@@ -2,7 +2,7 @@
   "name": "githubactioninaction100",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo  no test specified" 
+    "test": "echo \"no test specified\"",
     "build": "echo 'No build step required'"
   }
 }
