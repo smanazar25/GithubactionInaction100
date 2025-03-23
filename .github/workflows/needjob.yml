@@ -22,14 +22,20 @@ jobs:
 
   test_job:
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'feature/') 
     needs: build  # This ensures test_job will only run after build completes successfully
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Run tests
-        run: npm test  # This runs the tests after the code is checked out
+        run: npm test |tee test_output.log # This runs the tests after the code is checked out
       - name: Validate the test
         if: success()
         run: test completd sucesfully 
+      - name: Extract and Display Test Summary
+        run: |
+         echo "## 🧪 Test Summary Report" >> $GITHUB_STEP_SUMMARY
+         PASSED=$(grep -o "✓" test_output.log | wc -l)
+         FAILED=$(grep -o "✗" test_output.log | wc -l)
+         echo "- ✅ Passed Tests: **$PASSED**" >> $GITHUB_STEP_SUMMARY
+         echo "- ❌ Failed Tests: **$FAILED**" >> $GITHUB_STEP_SUMMARY
