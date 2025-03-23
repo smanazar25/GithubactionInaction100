@@ -31,7 +31,7 @@ jobs:
         run: npm test |tee test_output.log # This runs the tests after the code is checked out
       - name: Validate the test
         if: success()
-        run: test completd sucesfully 
+        run: echo  "test completd sucesfully "
       - name: Extract and Display Test Summary
         run: |
          echo "## 🧪 Test Summary Report" >> $GITHUB_STEP_SUMMARY
